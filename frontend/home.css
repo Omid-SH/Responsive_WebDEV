@@ -1,0 +1,67 @@
+@media screen and (max-width: 600px) 
+{
+    .small_div {
+        display:block;
+    }
+    
+    .big_div {
+        display:none;
+    }
+}
+
+@media screen and (min-width: 600px)
+{
+    .small_div {
+        display:none;
+    }
+    
+    .big_div {
+        display:block;
+    }
+}
+
+.big_div {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.logo_img_container {
+    height: 100%;
+    width: 150px;
+    float: right;
+    padding-right: 40px;
+}
+
+#home_big_header {
+    background-color: lightblue;
+    height: 100px;
+}
+
+#home_big_navbar {
+    background-color: lightblue;
+    height: 100%;
+}
+
+#home_big_logo {
+    background-color: rebeccapurple;
+    height: 100%;
+    width: 300px;
+}
+
+#page_big_content {
+    height: 100%;
+}
+
+#home_big_gallery {
+    height: 100%;
+    width: 300px;
+    background-color: gold;
+}
+
+#home_big_side_navbar {
+    background-color: rebeccapurple;
+    float: right;
+    height: 100%;
+    width: 300px;
+}
