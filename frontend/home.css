@@ -1,3 +1,4 @@
+/* Screen size responsive */
 @media screen and (max-width: 600px) 
 {
     .small_div {
@@ -20,7 +21,83 @@
     }
 }
 
-.big_div {
+/* Gallery responsive 3 or 4 images */
+@media screen and (max-width: 1000px) 
+{
+    
+    #home_big_gallery_3 {
+        display:block;
+    }
+
+    #home_big_gallery_4 {
+        display:none;
+    }
+
+    #home_big_table {
+        display:none;
+    }
+    
+
+    /* For testing table layout */
+    /*
+    #home_big_gallery_3 {
+        display:none;
+    }
+
+    #home_big_gallery_4 {
+        display:none;
+    }
+
+    #home_big_table {
+        display:block;
+    }
+    */
+}
+
+@media screen and (min-width: 1000px)
+{
+    
+    #home_big_gallery_3 {
+        display:none;
+    }
+
+    #home_big_gallery_4 {
+        display:block;
+    }
+
+    #home_big_table {
+        display:none;
+    }
+    
+
+    /* For testing table layout */
+    /*
+    #home_big_gallery_3 {
+        display:none;
+    }
+
+    #home_big_gallery_4 {
+        display:none;
+    }
+
+    #home_big_table {
+        display:block;
+    }
+    */
+
+}
+
+/* define home page main colors */
+
+:root {
+    --color_light: lightblue;
+    --color_dark: rebeccapurple;
+    --white_space: white;
+  }
+
+
+/* big home main page devision */
+.big_div, .small_div {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -31,20 +108,23 @@
     width: 150px;
     float: right;
     padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-#home_big_header {
-    background-color: lightblue;
-    height: 100px;
+#home_big_header, #home_small_header {
+    background-color: var(--color_light);
+    height: 70px;
 }
 
 #home_big_navbar {
-    background-color: lightblue;
+    background-color: var(--color_light);
     height: 100%;
+    padding: 0%;
 }
 
 #home_big_logo {
-    background-color: rebeccapurple;
+    background-color: var(--color_light);
     height: 100%;
     width: 300px;
 }
@@ -53,15 +133,146 @@
     height: 100%;
 }
 
-#home_big_gallery {
+#home_big_gallery{
     height: 100%;
-    width: 300px;
-    background-color: gold;
+    width: 80%;
+    background-color: var(--white_space);
+    padding-left: 30px;
+    padding-right: 15px;
+    padding-top: 15px;
+    margin:0px;
 }
 
 #home_big_side_navbar {
-    background-color: rebeccapurple;
+    background-color: var(--color_dark);
     float: right;
     height: 100%;
     width: 300px;
+    margin: 0px;
 }
+
+/* Navbar of big home page setting */
+
+#home_big_signup_button {
+    margin-left:10px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 10pt;
+    text-align: center;
+    background-color: var(--color_dark);
+    color: var(--white_space);
+    width: 80px;
+    vertical-align: middle;
+}
+
+#home_big_signin_button {
+    margin-left:10px;
+    margin-top: 20px;
+    margin-right: 0%;
+    margin-bottom: 20px;
+    font-size: 10pt;
+    text-align: center;
+    width: 80px;
+    border-color: var(--color_dark);
+    color: var(--color_dark);
+    vertical-align: middle;
+}
+
+#home_big_data_button {
+    background-color: var(--color_light);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px; 
+    font-size: 10pt;
+    border-bottom: 5px solid var(--color_dark);
+    color: var(--color_dark);
+}
+
+#home_big_home_button {
+    background-color: var(--color_light);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px; 
+    font-size: 10pt;
+    border-bottom: 5px solid var(--color_dark);
+    color: var(--color_dark);
+}
+
+/* Galley each image link settings*/
+
+.gallery_item{
+    border: 2px solid var(--color_light);
+}
+.gallery_item:hover{
+    animation: changeBorderColor 2s infinite;
+    animation-iteration-count: 1;
+    border-color: var(--color_dark);
+}
+
+@keyframes changeBorderColor {
+    from {border-color: var(--color_light);}
+    to {border-color: var(--color_dark);}
+}
+
+
+/* small home main page devision */
+#home_small_logo {
+    background-color: var(--color_light);
+    height: 100%;
+    width: auto;
+}
+
+#home_small_collapse_button {
+    margin-left: 30px;
+    color: var(--color_dark);
+    font-size: 2em;
+}
+
+#home_small_footer {
+    margin: 0px;
+    background-color: var(--color_light);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+}
+
+#home_small_gallery{
+    height: 100%;
+    width: 100%;
+    background-color: var(--white_space);
+    padding-left: 30px;
+    padding-right: 15px;
+    padding-top: 15px;
+    margin-bottom:70px;
+}
+
+#home_small_signup_button, #home_small_signin_button, #home_small_data_button, #home_small_home_button {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color_light);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px; 
+    font-size: 10pt;
+    border-bottom: 5px solid var(--color_dark);
+    color: var(--color_dark);
+}
+
+
+
+/* Table content */
+
+/*
+#home_big_table {
+
+}
+
+#home_big_table_header {
+
+} */
