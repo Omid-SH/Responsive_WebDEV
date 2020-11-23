@@ -26,25 +26,95 @@
         function toggle(item) {
         var register = document.getElementById('register');
         var signIn = document.getElementById('sign-in');
-        var repeat = document.getElementById('pass-repeat')
-        var submitText = document.getElementById('btn')
-        
+        var repeat = document.getElementById('pass-repeat');
+        var submitText = document.getElementById('btn');
+        var ruleDiv = document.getElementById('rule');
+        var submitDiv = document.getElementById('submit');
+        var submitText = document.getElementById('btn');
+
         if(item == 0){
             register.style.color = '#73A1C2';
             register.style.backgroundColor = '#D1E4F3';
             signIn.style.color = '#186AA5';
             signIn.style.backgroundColor = '#ffffff';
             repeat.style.display = "none"
+            ruleDiv.style.display = "none"
+            submitDiv.style.marginTop = "20px";
             submitText.value = "ورود"
 
-        }else{
+        } else {
             signIn.style.color = '#73A1C2';
             signIn.style.backgroundColor = '#D1E4F3';
             register.style.color = '#186AA5';
             register.style.backgroundColor = '#ffffff';
             repeat.style.display = "block"
+            ruleDiv.style.display = "block"
+            submitDiv.style.marginTop = "0px";
             submitText.value = "ثبت نام"
         }
+        }
+
+        function signup(button) {
+            var email = document.getElementById('email');
+            var pass = document.getElementById('pass');
+            var passRepeat = document.getElementById('pass-repeat');
+            var errorText = document.getElementById('error-text');
+            var errorPart = document.getElementById('error-part');
+            var submitDiv = document.getElementById('submit');
+            var checkRule = document.getElementById('check-rule');
+
+            if(button.value == "ثبت نام") {
+                if(email.value == "") {
+                    errorText.innerHTML = ".ایمیل خود را وارد کنید";   
+                } else if (pass.value == "") {
+                    errorText.innerHTML = ".رمز عبور انتخاب کنید";   
+                } else if (pass.value != passRepeat.value) {
+                    errorText.innerHTML = "!عدم همخوانی تکرار رمز عبور";   
+                } else if(checkRule.checked == false) {
+                    errorText.innerHTML = ".قوانین را تایید بفرمایید";   
+                } else {
+                    alert(".ثبت نام با موفقیت انجام شد"); 
+                    errorPart.style.display = "none";
+                    submitDiv.style.marginBottom = "20px";
+                    return;  
+                }
+
+                submitDiv.style.marginBottom = "0px";
+                errorPart.style.display = "block";
+                errorPart.style.animation = "fadeIn 0.7s infinite";
+                errorPart.style.animationIterationCount = "1";
+                errorPart.style.animationFillMode = "forwards";
+
+                return;
+            }
+
+            if(email.value == "") {
+                    errorText.innerHTML = ".ایمیل خود را وارد کنید";   
+                } else if (pass.value == "") {
+                    errorText.innerHTML = ".رمز عبورخود را وارد کنید";   
+                } else {
+                    alert ("!وارد شدید");
+                    errorPart.style.display = "none";
+                    submitDiv.style.marginBottom = "20px";
+                    return;
+                }
+
+            submitDiv.style.marginBottom = "0px";
+            errorPart.style.display = "block";
+            errorPart.style.animation = "fadeIn 0.7s infinite";
+            errorPart.style.animationIterationCount = "1";
+            errorPart.style.animationFillMode = "forwards";
+
+            return;
+
+        }
+
+        function removeErrorBox() {
+            var errorPart = document.getElementById('error-part');
+            var submitDiv = document.getElementById('submit');
+
+            errorPart.style.display = "none"
+            submitDiv.style.marginBottom = "20px";
         }
 
     </script>
@@ -75,7 +145,10 @@
     <div class="d-flex justify-content-center responsive_div">
 
         <div class=" big_div">
-                <img style="width: 100%; height: 100%;" src="../data/signup-lowQ-light.jpg" alt="">
+            <div class="container" style="width: 100%; height: 100%; margin: 0%; padding: 0%;">
+                <img id="left_side_img" style="width: 100%; height: 100%;" src="../data/signup-lowQ-light.jpg" alt="">
+                <div class="centered">برای آغاز مسیر خود در سایت ما ثبت نام کنید</div>
+            </div>
         </div>
 
         <div class=" small_div">  
@@ -83,44 +156,45 @@
             <div class="column" id="login-box">
                 <!--Top navigation Bar(Register Vs SignUp-->
                 <div id = "top-nav-box" class="d-flex" >
-          
-                  <div id= "sign-in" class="p-2 flex-fill" style="width: 50%;"
-                  onclick="toggle(0)">ورود</div>
-          
-                  <div id = "register" class="p-2 flex-fill"  style="width: 50%;"       
-                  onclick="toggle(1)">ثبت نام</div>
-          
+
+                    <div id= "sign-in" class="p-2 flex-fill" style="width: 50%;"
+                    onclick="toggle(0)">ورود</div>
+
+                    <div id = "register" class="p-2 flex-fill"  style="width: 50%;"       
+                    onclick="toggle(1)">ثبت نام</div>
+
                 </div>
-          
+
                 <!--Inner Box-->
                 <div id="login-inner-box" >
-          
-                  <input type="text"  placeholder="ایمیل"/>
-                  <input type="password" placeholder="رمز عبور" />
-                  <input id="pass-repeat" type="password" placeholder="تکرار رمز عبور" />
-                  
-                  <!--Accept rules-->
-                  <div id="rule" >
-                    <input type="checkbox" class="square">
+
+                    <input id="email" type="text"  placeholder="ایمیل"/>
+                    <input id="pass" type="password" placeholder="رمز عبور"/>
+                    <input id="pass-repeat" type="password" placeholder="تکرار رمز عبور" />
+
+                    <!--Accept rules-->
+                    <div id="rule" >
+                        <input id="check-rule" type="checkbox" class="square">
                     <div style="color: #78A4C4;" class="warning">قوانین و شرایط را قبول می کنم</div>
-                  </div>
-          
-                  <!--Submit Button-->
-                  <input id="btn" type="submit" name="signup_submit" value="ثبت نام"/>
-          
-                  <!--Error Part-->
-                  <div id="error-part" >
-          
-                      <div id = "right-rect" class="p-2 flex-fill"></div>
-                      <div id = "error-text" class="p-2 flex-fill">متن خطا</div>
-                      
-                      <div class="p-2 flex-fill" style="height:100%;background-color:#E8EFF7;"> 
-                          <div id = "error-circle">&#10005;</div>
-                      </div>
-                  
-                  </div>
-          
-          
+                </div>
+
+                <!--Submit Button-->
+                <div id="submit" >
+                    <input id="btn" type="submit" name="signup_submit" onclick="signup(this)" value="ثبت نام"/>
+                </div>
+
+                <!--Error Part-->
+                <div id="error-part" >
+
+                    <div id = "right-rect" class="p-2 flex-fill"></div>
+                    <div id = "error-text" class="p-2 flex-fill">متن خطا</div>
+
+                    <div class="p-2 flex-fill" style="height:100%;background-color:#E8EFF7;"> 
+                        <div id = "error-circle" onclick="removeErrorBox();">&#10005;</div>
+                    </div>
+
+                    </div>
+
                 </div>
           
             </div>

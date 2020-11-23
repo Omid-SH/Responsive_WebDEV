@@ -51,8 +51,8 @@
         height: 400px;
         margin-left: 0%;
         padding-left: 0%;
-        max-width: 500px;
-        min-width: 300px;
+        max-width: 375px;
+        min-width: 375px;
         background-color: var(--color_light);
     }
 
@@ -97,11 +97,22 @@
 
 }
 
+@media screen and (max-width: 1000px) {
+  #left_side_img {
+    content:url("../data/signup-lowQ-light.jpg");
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #left_side_img {
+    content:url("../data/signup-highQ-light.jpg");
+  }
+}
 /* define signinup page main colors */
 
 :root {
-    --color_light: lightblue;
-    --color_dark: rebeccapurple;
+    --color_light: #E8EFF7;
+    --color_dark: #1F6EA7;
     --white_space: white;
     --black_space: black;
   }
@@ -161,6 +172,27 @@
     background-color: var(--color_light);
     height: 100%;
     width: auto;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: var(--color_dark);
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Login box */
