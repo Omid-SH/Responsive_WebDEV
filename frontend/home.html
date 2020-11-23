@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>خانه</title>
+    <title>WebDev</title>
     <meta name="description" content="hw02-frontend-home">
 
     <!-- Links -->
@@ -34,7 +34,8 @@
         <div class="col" id="home_big_navbar">
             <div class="d-flex flex-row" style="width: 100%; height: 100%;">
                 <div class="d-flex justify-content-start mr-auto">
-                    <button class="btn" id="home_small_collapse_button"><i class="fa fa-bars"></i></button>
+                    <button class="btn" id="home_small_collapse_button" onclick="showNavbarSmall(1)"><i class="fa fa-bars"></i></button>
+                    <button class="btn" id="home_small_collapse_button_cross" onclick="showNavbarSmall(0)"><i class="fa fa-times"></i></button>
                 </div>
                 <div class="d-flex">
                     <!-- Logo on navbar -->
@@ -45,6 +46,29 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Left side navbar -->
+    <div id="home_small_side_navbar">
+        <div class="overflow-hidden" style="direction: rtl; padding-right: 50px; padding-top: 20px; color: white;">
+
+            <!-- Team members-->
+            <p class="font-weight-bold text-right" >اعضای تیم</p>
+            <div style="list-style-type:arabic-indic ;direction:RTL; text-align: right">
+                <ul>
+                    <li>امیرحسین رستمی</li>
+                    <li>امید شرفی</li>
+                </ul>
+            </div>
+
+            <!-- Settings -->
+            <p class="font-weight-bold text-right" style="margin-top: 50px;">تنظیمات</p>  
+            <div class="custom-control custom-switch" style="float:right">
+                <input type="checkbox" onchange="nightMode(this);" class="custom-control-input" checked="" id="nigth_mode_sw1">
+                <label class="custom-control-label text-right" style="padding-left: 100px;" for="nigth_mode_sw1">حالت شب</label>
+            </div>
+
         </div>
     </div>
 
@@ -60,7 +84,7 @@
               
                 <div class="col-12">
                     <a href="#" class="d-block mb-4 h-100">
-                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+                        <img class="gallery_item img-fluid" style="margin-top: 50px;" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
                     </a>
                 </div>
                 
@@ -135,7 +159,159 @@
             </div> 
 
         </div>
+
     </div>
+
+    <!-- Small Table -->
+    <div class="container-fluid overflow-auto" id="home_small_table">
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۱</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">کوشا جان</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه صنعتی شریف، ایران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۱۳۰۵</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۲</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">مبارزین نتها</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه امیرکبیر، ایران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۱۲۷۰</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۳</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">حاجی درچه‌ای</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه علوم پزشکی اصفهان، ایران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۱۲۵۰</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۴</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">عدالت و آزادی</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه آزاد قزوین، ایران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۱۱۰۵</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۵</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">Beatles</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه ملی شوچنکو، اوکراین</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۹۴۰</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۶</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">الگل</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه آزاد اسلامی واحد علوم تحقیقات، تهران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۹۲۵</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۷</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">عمال مناجم البيانات</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه علم و صنعت اردن، اردن</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۸۷۰</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 
     <!-- Fixed Footer -->
     <div class="row" id="home_small_footer">
@@ -152,11 +328,11 @@
                     </div>
 
                     <div class="col-3">
-                        <button type="button" id="home_small_data_button">داده ها</button>
+                        <button type="button" onclick="setGallery(1)" id="home_small_data_button">داده ها</button>
                     </div>
 
                     <div class="col-3">
-                        <button type="button" id="home_small_home_button">خانه</button> 
+                        <button type="button" onclick="setGallery(0)" id="home_small_home_button">خانه</button> 
                     </div>
 
                 </div>
@@ -180,8 +356,8 @@
                     <button type="button" class="btn btn-outline align-middle" id="home_big_signin_button">ورود</button> 
                 </div>
                 <div class="d-flex">
-                    <button type="button" id="home_big_data_button">داده ها</button>
-                    <button type="button" id="home_big_home_button">خانه</button> 
+                    <button type="button" onclick="setGallery(1)" id="home_big_data_button">داده ها</button>
+                    <button type="button" onclick="setGallery(0)" id="home_big_home_button">خانه</button> 
                 </div>
             </div>
         </div>
@@ -369,48 +545,77 @@
                 </div> 
             </div>
 
-            <!-- Table of Data-->
-            <!-- 
-            <div id="home_big_table" style="width: 100%; height: 100%;">
+        </div>
 
-                <div class="container-fluid overflow-auto" style="width: 100%; height: 100%; padding:0% ; margin: 0%;">
-
-                    <div class="table-responsive">
-                    <table class="table table-bordered table-sm table-striped m-10px">
+        <!-- Table of Data-->
+        <div class="col" id="home_big_table">    
+            <div class="container-fluid overflow-auto" style="width: 100%; height: 100%; padding:0% ; margin: 0%;">
+                <div class="row">
+                    <div class="col-12">
+                    <table class="styled-table">
                         <thead>
-                        <tr>
-                            <th scope="col ">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
+                            <tr>
+                                <th style="width: 25%;">امتیاز</th>
+                                <th style="width: 30%;">نام دانشگاه و کشور</th>
+                                <th style="width: 25%;">نام تیم</th>
+                                <th style="width: 20%;">رتبه</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Maasdasdasdasd  rk</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacoasdasdasdasdasasdasdab</td>
-                            <td>Thorasdasdasdasdnton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larasdasdasry</td>
-                            <td>the asdasdasdasdasdasdasdasdBird</td>
-                            <td>@twitter</td>
-                        </tr>
+                            <tr>
+                                <td>۱۳۰۵</td>
+                                <td>دانشگاه صنعتی شریف، ایران</td>
+                                <td>کوشا‌ جان</td>
+                                <td>۱</td>
+                            </tr>
+
+                            <tr>
+                                <td>۱۲۷۰</td>
+                                <td>دانشگاه امیرکبیر، ایران</td>
+                                <td>مبارزین نتها</td>
+                                <td>۲</td>
+                            </tr>
+
+                            <tr>
+                                <td>۱۲۵۰</td>
+                                <td>دانشگاه علوم پزشکی اصفهان، اصفهان</td>
+                                <td>حاجی درچه‌ای</td>
+                                <td>۳</td>
+                            </tr>
+
+                            <tr>
+                                <td>۱۱۰۵</td>
+                                <td>دانشگاه آزاد قزوین، ایران</td>
+                                <td>عدالت و آزادی</td>
+                                <td>۴</td>
+                            </tr>
+
+                            <tr>
+                                <td>۹۴۰</td>
+                                <td>دانشگاه ملی شوچنکو، اوکراین</td>
+                                <td>Beatles</td>
+                                <td>۵</td>
+                            </tr>
+
+                            <tr>
+                                <td>۹۲۵</td>
+                                <td>دانشگاه آزاد اسلامی واحد علوم تحقیقات، تهران</td>
+                                <td>الگل</td>
+                                <td>۶</td>
+                            </tr>
+
+                            <tr>
+                                <td>۸۷۰</td>
+                                <td>دانشگاه علم و صنعت اردن، اردن</td>
+                                <td>عمال مناجم البيانات</td>
+                                <td>۷</td>
+                            </tr>
                         </tbody>
-                    </table>
+                    </table>  
                     </div>
                 </div>
             </div>
-            -->
-            
+
         </div>
 
         <!-- Right side navbar -->
@@ -429,8 +634,8 @@
                 <!-- Settings -->
                 <p class="font-weight-bold text-right" style="margin-top: 50px;">تنظیمات</p>  
                 <div class="custom-control custom-switch" style="float:right">
-                    <input type="checkbox" class="custom-control-input" id="nigth_mode_sw">
-                    <label class="custom-control-label text-right" style="padding-left: 100px;" for="nigth_mode_sw">حالت شب</label>
+                    <input type="checkbox" onchange="nightMode(this);" class="custom-control-input" checked="" id="nigth_mode_sw2">
+                    <label class="custom-control-label text-right" style="padding-left: 100px;" for="nigth_mode_sw2">حالت شب</label>
                 </div>
 
             </div>
