@@ -47,8 +47,9 @@
 /* define home page main colors */
 
 :root {
-    --color_light: lightblue;
-    --color_dark: rebeccapurple;
+    --color_light: #E8EFF7;
+    --color_dark: #186AA5;
+    --card_normal_text: #6EA0C7;
     --white_space: white;
     --black_space: black;
   }
@@ -70,9 +71,20 @@
     padding-bottom: 10px;
 }
 
-#home_big_header, #home_small_header {
+#home_big_header {
     background-color: var(--color_light);
     height: 70px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0px 1px 30px #888;
+}
+
+#home_small_header {
+    background-color: var(--color_light);
+    height: 70px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0px 1px 30px #888;
 }
 
 #home_big_navbar {
@@ -155,15 +167,25 @@
     padding-left: 10px;
     padding-right: 10px; 
     font-size: 10pt;
+    font-weight: bold;
     border-bottom: 5px solid var(--color_dark);
     color: var(--color_dark);
 }
 
 /* Galley each image link settings*/
 
-.gallery_item{
+.gallery_item {
     border: 2px solid var(--color_light);
 }
+
+.col-4 {
+    padding: 0.2% !important;
+}
+
+.col-3 {
+    padding: 0.3% !important;
+}
+
 .gallery_item:hover{
     animation: changeBorderColor 2s infinite;
     animation-iteration-count: 1;
@@ -211,12 +233,15 @@
 #home_small_footer {
     margin: 0px;
     background-color: var(--color_light);
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 70px;
-    z-index: 1;
+    background-color: var(--color_light);
+    height: 70px;
+    position: fixed;
+    z-index: 10;
+    box-shadow: 0px -1px 30px #888;
 }
 
 #home_small_gallery{
@@ -238,6 +263,7 @@
     padding-left: 10px;
     padding-right: 10px; 
     font-size: 10pt;
+    font-weight: bold;
     border-bottom: 5px solid var(--color_dark);
     color: var(--color_dark);
 }
@@ -276,6 +302,16 @@
     to {margin-left:  -300px;}
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
 /* Table content */
 .home_small_table_right {
     width: 30%;
@@ -283,6 +319,7 @@
     text-align: right;
     float: right;
     color: var(--color_dark);
+    font-weight: bold;
 }
 
 .home_small_table_left {
@@ -290,7 +327,16 @@
     direction:RTL; 
     text-align: left;
     float: left;
+    color: var(--card_normal_text);
+}
+
+.home_small_table_left_im{
+    width: 70%;
+    direction:RTL; 
+    text-align: left;
+    float: left;
     color: var(--color_dark);
+    font-weight: bolder;
 }
 
 .home_small_table_card {
@@ -330,9 +376,9 @@
 .styled-table {
     width: 100%;
     height: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     table-layout: fixed;
     text-align: center;   
+    border: 2px solid var(--color_light);
 
 }
 
@@ -360,3 +406,92 @@
     background-color: var(--color_light);
 }
 
+#table_next {
+    margin-left:1px;
+    margin-top: 20px;
+    font-size: 10pt;
+    text-align: center;
+    color: var(--color_dark);
+    width: 80px;
+    vertical-align: middle;
+    border-color: var(--color_dark);
+}
+
+#table_previous {
+    margin-right:1px;
+    margin-top: 20px;
+    font-size: 10pt;
+    text-align: center;
+    color: var(--color_dark);
+    width: 80px;
+    vertical-align: middle;
+    border-color: var(--color_dark);
+
+}
+
+
+/* Just a toggle Button !!! */
+
+.scaled {
+    transform: scale(0.5);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
