@@ -2,7 +2,7 @@
 WebDEV is a persian simple responsive FrontEnd with gallaty, table, menu and signin/signup page
 
 | Developers |
-| :---: | :---: |
+| :---: |
 | AmirHoseinRostami |
 | OmidSharafi |
 
@@ -10,8 +10,8 @@ WebDEV is a persian simple responsive FrontEnd with gallaty, table, menu and sig
 
 # Responsive 
 
-![Responsive Image 1](https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S2.png)
-![Responsive Image 2](https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S3.png)
+<img src="https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S2.png" width="200" height="400">
+<img src="https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S3.png" width="200" height="400">
 
 # With dark mode
 ![Dark Mode Image](https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S4.png)
