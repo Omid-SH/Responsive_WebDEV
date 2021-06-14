@@ -10,8 +10,10 @@ WebDEV is a persian simple responsive FrontEnd with gallaty, table, menu and sig
 
 # Responsive 
 
-<img src="https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S2.png" width="200" height="400">
-<img src="https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S3.png" width="200" height="400">
+<div>
+<img src="https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S2.png" alt="Responsive image 1" width="300" height="500">
+<img src="https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S3.png" alt="Responsive image 2" width="300" height="500">
+</div>
 
 # With dark mode
 ![Dark Mode Image](https://github.com/Omid-SH/Responsive_WebDEV/blob/master/screen_shots/S4.png)
